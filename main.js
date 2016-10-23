@@ -12,7 +12,12 @@ server.get('/', function (req, res) {
 });
 
 server.get('/przepisy', function (req, res) {
-  res.render('przepisy');
+  var przepis = {
+    nazwa:'biszkopt z czekolada',
+    instrukcja:'dodaj mleko do kakao , czekolade masz wspaniala',
+    skladniki:['mleko','kakao','czekolada','jajka'],
+  }
+  res.render('przepisy',przepis);
 });
 
 
