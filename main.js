@@ -1,7 +1,7 @@
 var express = require('express');
 var server = express();
 var exphbs = require('express-handlebars');
-var recipes = require('./recipes.json');
+var recipeList = require('./recipes.json');
 
 server.engine('handlebars', exphbs({defaultLayout: 'main'}));
 server.set('view engine', 'handlebars');
@@ -14,9 +14,16 @@ server.get('/', function (req, res) {
 
 server.get('/przepisy', function (req, res) {
   res.render('recipe-list', {
-    recipes: recipes
+    recipes: recipeList
   });
 });
 
+server.get('/przepisy/:id', function (req, res) {
+  var foundRecipe = recipeList.find(function (r) {
+    return r.id == req.params.id;
+  });
+
+  res.render('recipe', foundRecipe);
+});
 
 server.listen(80);
