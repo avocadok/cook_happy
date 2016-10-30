@@ -1,6 +1,7 @@
 var express = require('express');
 var server = express();
-var exphbs  = require('express-handlebars');
+var exphbs = require('express-handlebars');
+var recipes = require('./recipes.json');
 
 server.engine('handlebars', exphbs({defaultLayout: 'main'}));
 server.set('view engine', 'handlebars');
@@ -12,12 +13,9 @@ server.get('/', function (req, res) {
 });
 
 server.get('/przepisy', function (req, res) {
-  var przepis = {
-    nazwa:'biszkopt z czekolada',
-    instrukcja:'dodaj mleko do kakao , czekolade masz wspaniala',
-    skladniki:['mleko','kakao','czekolada','jajka'],
-  }
-  res.render('przepisy',przepis);
+  res.render('recipe-list', {
+    recipes: recipes
+  });
 });
 
 

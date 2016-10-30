@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Chinese soup",
+    "instruction": "add all vegetables, boil 20 min",
+    "ingredients": ["carrot", "parsley", "potato", "chilli", "onion"]
+  },
+  {
+    "name": "salmon salat",
+    "instruction": "add salmon, add some vegetables, mix them together",
+    "ingredients": ["salmon", "olive oil", "tomato", "lettuce", "pepper"]
+  },
+  {
+    "name": "hamburger",
+    "instruction": "fry, bake, serve",
+    "ingredients": ["onion", "ham", "beef", "bun", "lettuce"]
+  },
+  {
+    "name": "soy rice",
+    "instruction": "boil, fry, serve",
+    "ingredients": ["rice", "water", "soy", "salt", "mayo"]
+  }
+]
